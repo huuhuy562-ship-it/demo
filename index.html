@@ -1,132 +1,102 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>08/03 12A7</title>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>08/03 - 12A7</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
-
 body{
+margin:0;
 overflow:hidden;
-background:#e8c7c7;
+background:black;
+font-family:sans-serif;
 }
 
-.slide{
+/* khung trình chiếu */
+
+#ppt-container{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100vw;
+height:100vh;
+
+overflow:hidden;
+
+}
+
+/* iframe PowerPoint */
+
+iframe{
+
 position:absolute;
+
+top:-60px;     /* cắt phần logo trên */
+left:0;
+
+width:100vw;
+height:120vh;  /* phóng lớn để che thanh dưới */
+
+border:none;
+
+}
+
+/* màn hình bắt đầu */
+
+#start{
+
+position:fixed;
+
+top:0;
+left:0;
+
 width:100%;
 height:100%;
-padding:40px;
-display:none;
-}
 
-.slide.active{
-display:block;
-animation:fade 1s;
-}
-
-@keyframes fade{
-from{opacity:0}
-to{opacity:1}
-}
-
-/* slide 1 */
-
-.title{
-text-align:center;
-margin-top:80px;
-}
-
-.title h1{
-font-size:60px;
+background:black;
 color:white;
-}
 
-.title h2{
-font-size:50px;
-color:white;
-}
-
-.big{
-font-size:120px;
-color:#ff3f7a;
-font-weight:bold;
-}
-
-.tap{
-position:absolute;
-bottom:30px;
-width:100%;
-text-align:center;
-color:#b36a6a;
-font-weight:bold;
-font-size:25px;
-}
-
-/* grid */
-
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-height:100%;
-}
-
-.text{
-font-size:30px;
-color:#b46868;
-line-height:1.6;
-}
-
-.photo img{
-width:100%;
-border-radius:20px;
-}
-
-/* circle */
-
-.circle{
-width:60%;
-border-radius:50%;
-display:block;
-margin:auto;
-}
-
-/* gallery */
-
-.gallery{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-border-radius:20px;
-}
-
-/* end */
-
-.end{
 display:flex;
-justify-content:center;
 align-items:center;
-text-align:center;
-height:100%;
+justify-content:center;
+
+font-size:26px;
+
+z-index:20;
+
 }
 
-.end h1{
-font-size:90px;
-color:#b46868;
+/* loading */
+
+#loading{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:black;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+color:white;
+
+font-size:22px;
+
+z-index:10;
+
 }
 
 </style>
@@ -135,139 +105,46 @@ color:#b46868;
 
 <body>
 
-<!-- slide 1 -->
-
-<section class="slide active">
-
-<div class="title">
-<h1>LỜI CHÚC 08/03 MUỘN</h1>
-<h2>GỬI ĐẾN CÁC CON VỢ</h2>
-<div class="big">12A7</div>
+<div id="start">
+Chạm màn hình để mở trình chiếu ❤️
 </div>
 
-<div class="tap">NHẤN ĐỂ TIẾP TỤC</div>
-
-</section>
-
-
-<!-- slide 2 -->
-
-<section class="slide grid">
-
-<div class="photo">
-<img src="img/group1.jpg">
+<div id="loading">
+Đang tải...
 </div>
-
-<div class="text">
-Kính gửi đến các con vợ của ae 12A5 THSP:  
-Dù lời chúc hơi muộn xíu  
-nhưng mong các gái đón nhận.
-</div>
-
-</section>
-
-
-<!-- slide 3 -->
-
-<section class="slide">
-
-<div class="text" style="text-align:center;margin-top:60px;">
-Cũng đã gần 3 năm chúng ta đồng hành được với nhau,  
-ae chúng tui vô cùng “sĩ” khi được học cùng các  
-“em xing”.  
-</div>
-
-<br><br>
-
-<img src="img/group2.jpg" class="circle">
-
-</section>
-
-
-<!-- slide 4 -->
-
-<section class="slide grid">
-
-<div class="text">
-Nhân dịp 08/03, như 1 lời cảm ơn cũng như sự quý mến  
-đối với các chị em, ae tụi tui đã cùng nhau lên kế hoạch  
-tổ chức kỉ niệm 08/03 cuối cùng của thời học sinh.
-</div>
-
-<div class="gallery">
-<img src="img/group1.jpg">
-<img src="img/group2.jpg">
-<img src="img/group3.jpg">
-<img src="img/group4.jpg">
-</div>
-
-</section>
-
-
-<!-- slide 5 -->
-
-<section class="slide grid">
-
-<div class="photo">
-<img src="img/group5.jpg">
-</div>
-
-<div class="text">
-Chúc cho các “em xing” của 12A7 luôn xinh đẹp,  
-học giỏi, thành công trong tương lai, đạt được  
-những điều mình muốn.  
-
-<br><br>
-
-Các chị em sẽ mãi là các  
-<b>“VỢ QUỐC DÂN”</b> trong lòng ae chúng tui.
-</div>
-
-</section>
-
-
-<!-- slide 6 -->
-
-<section class="slide end">
-
-<h1>CẢM ƠN VÌ ĐÃ<br>XEM HẾT</h1>
-
-</section>
-
 
 <audio id="music" loop>
 <source src="DRT.mp3">
 </audio>
 
+<div id="ppt-container">
+
+<iframe
+src="https://1drv.ms/p/c/3ba650a7cebe97c3/IQRmDZjD-YPyTIShtBbB6m4MAbP3D9sFh-1VUQEvrzqQcnY?em=2&wdAr=1.7777777777777777"
+allowfullscreen>
+</iframe>
+
+</div>
+
 <script>
 
-let slides=document.querySelectorAll(".slide")
-let index=0
-
+let start=document.getElementById("start")
+let loading=document.getElementById("loading")
 let music=document.getElementById("music")
-let started=false
 
-function next(){
+start.onclick=function(){
 
-if(!started){
 music.play()
-started=true
-}
 
-slides[index].classList.remove("active")
+start.style.display="none"
 
-index++
+setTimeout(function(){
 
-if(index>=slides.length){
-index=slides.length-1
-}
+loading.style.display="none"
 
-slides[index].classList.add("active")
+},3000)
 
 }
-
-document.addEventListener("click",next)
-document.addEventListener("touchstart",next)
 
 </script>
 
